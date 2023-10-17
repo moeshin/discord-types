@@ -40,11 +40,13 @@ export default interface __webpack_require__ {
    * 
    * @param ret The return value from the module will be `Object.assign`ed to this object.
    */
-  m: (e: {
-    exports: any,
-    id: number,
-    loaded: boolean;
-  }, ret: object, req: __webpack_require__) => void;
+  m: {
+    [id: number | string]: (e: {
+      exports: any,
+      id: number,
+      loaded: boolean;
+    }, ret: object, req: __webpack_require__) => void;
+  };
   n: Function;
   nmd: Function;
   o: Function;
